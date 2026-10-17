@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- LOGO -->
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✓
+                </div>
+
+                <div class="logo-text">
+                    <h2>TaskFlow</h2>
+                    <span>Gestión personal</span>
+                </div>
+
+            </div>
+
+
+            <!-- MENÚ -->
+            <nav class="menu">
+
+                <p class="menu-title">MENÚ PRINCIPAL</p>
+
+                <a href="#" class="menu-item active" data-section="dashboard">
+                    <span class="menu-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="menu-item" data-section="actividades">
+                    <span class="menu-icon">✓</span>
+                    <span>Actividades</span>
+                </a>
+
+                <a href="#" class="menu-item" data-section="calendario">
+                    <span class="menu-icon">□</span>
+                    <span>Calendario</span>
+                </a>
+
+                <a href="#" class="menu-item" data-section="reportes">
+                    <span class="menu-icon">▥</span>
+                    <span>Reportes</span>
+                </a>
+
+                <p class="menu-title menu-title-second">
+                    CONFIGURACIÓN
+                </p>
+
+                <a href="#" class="menu-item" data-section="configuracion">
+                    <span class="menu-icon">⚙</span>
+                    <span>Configuración</span>
+                </a>
+
+            </nav>
+
+
+            <!-- AYUDA -->
+            <div class="sidebar-help">
+
+                <div class="help-icon">
+                    ?
+                </div>
+
+                <div>
+                    <strong>¿Necesitas ayuda?</strong>
+                    <p>Consulta la información</p>
+                </div>
+
+            </div>
+
+
+            <!-- PERFIL -->
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    V
+                </div>
+
+                <div class="profile-info">
+                    <strong>Víctor</strong>
+                    <span>Usuario</span>
+                </div>
+
+                <button class="profile-more">
+                    ⋮
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= CONTENIDO ================= -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="topbar">
+
+                <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
+
+                <div class="page-name">
+                    <span>Panel principal</span>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <!-- BUSCADOR -->
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Buscar actividad..."
+                        >
+
+                    </div>
+
+
+                    <!-- NOTIFICACIONES -->
+                    <button class="notification-button" id="notificationButton">
+                        🔔
+                        <span class="notification-dot"></span>
+                    </button>
+
+
+                    <!-- USUARIO -->
+                    <div class="top-profile">
+
+                        <div class="top-avatar">
+                            V
+                        </div>
+
+                        <div class="top-profile-info">
+                            <strong>Víctor</strong>
+                            <span>Administrador</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================= DASHBOARD ================= -->
+            <section class="dashboard-section" id="dashboardSection">
+
+                <!-- BIENVENIDA -->
+                <div class="welcome">
+
+                    <div>
+
+                        <span class="welcome-label">
+                            PANEL DE CONTROL
+                        </span>
+
+                        <h1>
+                            Buenos días, Víctor
+                            <span>👋</span>
+                        </h1>
+
+                        <p>
+                            Aquí tienes un resumen de tus actividades
+                            y el progreso de tus tareas.
+                        </p>
+
+                    </div>
+
+
+                    <div class="date-card">
+
+                        <span>HOY</span>
+
+                        <strong id="currentDate">
+                            25 SEP 2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= ESTADÍSTICAS ================= -->
+                <div class="statistics">
+
+                    <!-- TOTAL -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon blue">
+                                ☷
+                            </div>
+
+                            <span class="stat-label">
+                                TOTAL
+                            </span>
+
+                        </div>
+
+                        <div class="stat-number" id="totalTasks">
+                            12
+                        </div>
+
+                        <p>
+                            Actividades registradas
+                        </p>
+
+                    </div>
+
+
+                    <!-- COMPLETADAS -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon green">
+                                ✓
+                            </div>
+
+                            <span class="stat-label">
+                                COMPLETADAS
+                            </span>
+
+                        </div>
+
+                        <div class="stat-number" id="completedTasks">
+                            7
+                        </div>
+
+                        <p>
+                            Actividades realizadas
+                        </p>
+
+                    </div>
+
+
+                    <!-- PENDIENTES -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon orange">
+                                ◷
+                            </div>
+
+                            <span class="stat-label">
+                                PENDIENTES
+                            </span>
+
+                        </div>
+
+                        <div class="stat-number" id="pendingTasks">
+                            5
+                        </div>
+
+                        <p>
+                            Actividades por realizar
+                        </p>
+
+                    </div>
+
+
+                    <!-- PROGRESO -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon purple">
+                                %
+                            </div>
+
+                            <span class="stat-label">
+                                PROGRESO
+                            </span>
+
+                        </div>
+
+                        <div class="stat-number" id="progressNumber">
+                            58%
+                        </div>
+
+                        <p>
+                            Progreso general
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CONTENIDO CENTRAL ================= -->
+                <div class="content-grid">
+
+                    <!-- ACTIVIDADES -->
+                    <div class="activities-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="section-label">
+                                    ACTIVIDADES
+                                </span>
+
+                                <h2>
+                                    Actividades recientes
+                                </h2>
+                            </div>
+
+                            <button
+                                class="new-task-button"
+                                id="openModal"
+                            >
+                                + Nueva actividad
+                            </button>
+
+                        </div>
+
+
+                        <!-- FILTROS -->
+                        <div class="filters">
+
+                            <button
+                                class="filter active-filter"
+                                data-filter="all"
+                            >
+                                Todas
+                            </button>
+
+                            <button
+                                class="filter"
+                                data-filter="pending"
+                            >
+                                Pendientes
+                            </button>
+
+                            <button
+                                class="filter"
+                                data-filter="completed"
+                            >
+                                Completadas
+                            </button>
+
+                        </div>
+
+
+                        <!-- LISTA -->
+                        <div class="task-list" id="taskList">
+
+                            <!-- TAREA 1 -->
+                            <div
+                                class="task completed"
+                                data-status="completed"
+                                data-title="Comprar materiales"
+                            >
+
+                                <button class="task-check checked">
+                                    ✓
+                                </button>
+
+                                <div class="task-information">
+
+                                    <h3>
+                                        Comprar materiales
+                                    </h3>
+
+                                    <div class="task-details">
+
+                                        <span>
+                                            Trabajo
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            Hoy
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="priority high">
+                                    Alta
+                                </span>
+
+                                <button
+                                    class="delete-task"
+                                    title="Eliminar"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <!-- TAREA 2 -->
+                            <div
+                                class="task"
+                                data-status="pending"
+                                data-title="Revisar documentos"
+                            >
+
+                                <button class="task-check">
+                                    ✓
+                                </button>
+
+                                <div class="task-information">
+
+                                    <h3>
+                                        Revisar documentos
+                                    </h3>
+
+                                    <div class="task-details">
+
+                                        <span>
+                                            Personal
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            Hoy
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="priority medium">
+                                    Media
+                                </span>
+
+                                <button
+                                    class="delete-task"
+                                    title="Eliminar"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <!-- TAREA 3 -->
+                            <div
+                                class="task"
+                                data-status="pending"
+                                data-title="Organizar herramientas"
+                            >
+
+                                <button class="task-check">
+                                    ✓
+                                </button>
+
+                                <div class="task-information">
+
+                                    <h3>
+                                        Organizar herramientas
+                                    </h3>
+
+                                    <div class="task-details">
+
+                                        <span>
+                                            Trabajo
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            Mañana
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="priority low">
+                                    Baja
+                                </span>
+
+                                <button
+                                    class="delete-task"
+                                    title="Eliminar"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <!-- TAREA 4 -->
+                            <div
+                                class="task completed"
+                                data-status="completed"
+                                data-title="Enviar informe"
+                            >
+
+                                <button class="task-check checked">
+                                    ✓
+                                </button>
+
+                                <div class="task-information">
+
+                                    <h3>
+                                        Enviar informe
+                                    </h3>
+
+                                    <div class="task-details">
+
+                                        <span>
+                                            Trabajo
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            Hoy
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="priority high">
+                                    Alta
+                                </span>
+
+                                <button
+                                    class="delete-task"
+                                    title="Eliminar"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+
+                            <!-- TAREA 5 -->
+                            <div
+                                class="task"
+                                data-status="pending"
+                                data-title="Planificar actividades"
+                            >
+
+                                <button class="task-check">
+                                    ✓
+                                </button>
+
+                                <div class="task-information">
+
+                                    <h3>
+                                        Planificar actividades
+                                    </h3>
+
+                                    <div class="task-details">
+
+                                        <span>
+                                            Personal
+                                        </span>
+
+                                        <span>
+                                            •
+                                        </span>
+
+                                        <span>
+                                            Viernes
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <span class="priority medium">
+                                    Media
+                                </span>
+
+                                <button
+                                    class="delete-task"
+                                    title="Eliminar"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= COLUMNA DERECHA ================= -->
+                    <div class="right-column">
+
+                        <!-- PROGRESO -->
+                        <div class="progress-card">
+
+                            <div class="card-header-small">
+
+                                <div>
+                                    <span class="section-label">
+                                        PROGRESO
+                                    </span>
+
+                                    <h2>
+                                        Progreso semanal
+                                    </h2>
+                                </div>
+
+                                <span class="three-dots">
+                                    ⋮
+                                </span>
+
+                            </div>
+
+
+                            <div class="progress-circle">
+
+                                <div class="circle-inner">
+
+                                    <strong id="circleProgress">
+                                        58%
+                                    </strong>
+
+                                    <span>
+                                        completado
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-info">
+
+                                <div>
+                                    <span class="progress-dot blue-dot"></span>
+                                    <span>Completadas</span>
+                                    <strong id="progressCompleted">7</strong>
+                                </div>
+
+                                <div>
+                                    <span class="progress-dot gray-dot"></span>
+                                    <span>Pendientes</span>
+                                    <strong id="progressPending">5</strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESUMEN -->
+                        <div class="summary-card">
+
+                            <span class="section-label">
+                                RESUMEN
+                            </span>
+
+                            <h2>
+                                Actividad semanal
+                            </h2>
+
+
+                            <div class="chart">
+
+                                <div class="chart-day">
+                                    <span>LU</span>
+                                    <div class="bar" style="height: 45%;"></div>
+                                    <small>4</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>MA</span>
+                                    <div class="bar" style="height: 70%;"></div>
+                                    <small>6</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>MI</span>
+                                    <div class="bar" style="height: 55%;"></div>
+                                    <small>5</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>JU</span>
+                                    <div class="bar" style="height: 85%;"></div>
+                                    <small>8</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>VI</span>
+                                    <div class="bar today" style="height: 65%;"></div>
+                                    <small>6</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>SA</span>
+                                    <div class="bar" style="height: 35%;"></div>
+                                    <small>3</small>
+                                </div>
+
+                                <div class="chart-day">
+                                    <span>DO</span>
+                                    <div class="bar" style="height: 25%;"></div>
+                                    <small>2</small>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PARTE INFERIOR ================= -->
+                <div class="bottom-grid">
+
+                    <!-- CONSEJO -->
+                    <div class="tip-card">
+
+                        <div class="tip-icon">
+                            💡
+                        </div>
+
+                        <div>
+
+                            <span>
+                                CONSEJO DEL DÍA
+                            </span>
+
+                            <h3>
+                                Organiza tus actividades
+                                por prioridad.
+                            </h3>
+
+                            <p>
+                                Comienza por las tareas más importantes
+                                y continúa con las actividades de menor
+                                prioridad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ACCIONES -->
+                    <div class="quick-card">
+
+                        <span class="section-label">
+                            ACCIONES RÁPIDAS
+                        </span>
+
+                        <div class="quick-actions">
+
+                            <button id="quickAdd">
+                                <span>＋</span>
+                                Nueva tarea
+                            </button>
+
+                            <button id="quickReport">
+                                <span>▥</span>
+                                Ver reporte
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SECCIONES SECUNDARIAS ================= -->
+
+            <section class="hidden-section" id="actividadesSection">
+
+                <div class="empty-section">
+
+                    <div class="empty-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Actividades
+                    </h2>
+
+                    <p>
+                        Desde aquí podrás administrar tus actividades.
+                    </p>
+
+                    <button class="new-task-button open-modal-secondary">
+                        + Nueva actividad
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="hidden-section" id="calendarioSection">
+
+                <div class="empty-section">
+
+                    <div class="empty-icon">
+                        □
+                    </div>
+
+                    <h2>
+                        Calendario
+                    </h2>
+
+                    <p>
+                        Consulta y organiza tus actividades por fecha.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="hidden-section" id="reportesSection">
+
+                <div class="empty-section">
+
+                    <div class="empty-icon">
+                        ▥
+                    </div>
+
+                    <h2>
+                        Reportes
+                    </h2>
+
+                    <p>
+                        Aquí podrás consultar el resumen de tus actividades.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="hidden-section" id="configuracionSection">
+
+                <div class="empty-section">
+
+                    <div class="empty-icon">
+                        ⚙
+                    </div>
+
+                    <h2>
+                        Configuración
+                    </h2>
+
+                    <p>
+                        Configura las preferencias de tu aplicación.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer>
+
+                <p>
+                    TaskFlow © 2026
+                </p>
+
+                <span>
+                    Dashboard desarrollado con HTML, CSS y JavaScript
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= MODAL NUEVA ACTIVIDAD ================= -->
+
+    <div class="modal-background" id="modal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="section-label">
+                        NUEVA ACTIVIDAD
+                    </span>
+
+                    <h2>
+                        Registrar actividad
+                    </h2>
+                </div>
+
+                <button id="closeModal" class="close-modal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="taskForm">
+
+                <div class="form-group">
+
+                    <label for="taskName">
+                        Nombre de la actividad
+                    </label>
+
+                    <input
+                        type="text"
+                        id="taskName"
+                        placeholder="Ej. Revisar documentos"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDescription">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="taskDescription"
+                        placeholder="Describe brevemente la actividad..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="taskCategory">
+                            Categoría
+                        </label>
+
+                        <select id="taskCategory">
+
+                            <option value="Trabajo">
+                                Trabajo
+                            </option>
+
+                            <option value="Personal">
+                                Personal
+                            </option>
+
+                            <option value="Estudio">
+                                Estudio
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="taskPriority">
+                            Prioridad
+                        </label>
+
+                        <select id="taskPriority">
+
+                            <option value="high">
+                                Alta
+                            </option>
+
+                            <option value="medium">
+                                Media
+                            </option>
+
+                            <option value="low">
+                                Baja
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="taskDate">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="taskDate"
+                    >
+
+                </div>
+
+
+                <div class="form-error" id="formError"></div>
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelModal"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        Guardar actividad
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= NOTIFICACIÓN ================= -->
+
+    <div class="toast" id="toast">
+
+        <div class="toast-icon">
+            ✓
+        </div>
+
+        <div>
+            <strong id="toastTitle">
+                Acción realizada
+            </strong>
+
+            <p id="toastMessage">
+                La actividad fue actualizada.
+            </p>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
